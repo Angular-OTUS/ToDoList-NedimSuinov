@@ -1,0 +1,66 @@
+<!-- Header -->
+<div class="todo-header">
+    <h2>{{ title }}</h2>
+</div>
+
+<!-- Filter -->
+
+<app-todo-filter (changeFilter)="filterChange($event)"></app-todo-filter>
+
+<!-- Body -->
+<ul class="todo-body">
+    <ng-container *ngTemplateOutlet="isLoading === true ? todoLoading : todoItems"></ng-container>
+
+    <router-outlet></router-outlet>
+
+    <span class="todo-no-items" *ngIf="!isLoading && !(todos$ | async)?.length">No records</span>
+</ul>
+
+<!-- Actions -->
+<div class="todo-actions">
+    <div class="todo-fields">
+        <mat-form-field class="input">
+            <input type="text" matInput placeholder="Add your new todo" [(ngModel)]="todoTextValue">
+        </mat-form-field>
+
+        <hr style="opacity: 0;">
+
+        <mat-form-field class="input">
+            <textarea 
+                matInput
+                placeholder="Your todo description"
+                [(ngModel)]="todoDescValue"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="3"
+                cdkAutosizeMaxRows="5">
+            </textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="todo-submit">
+        <app-button [disabled]="canSubmit" (click)="appendTodo(todoTextValue, todoDescValue)" tooltip="Добавить запись?">Add task</app-button> 
+    </div>
+</div>
+
+<!-- Templates -->
+<ng-template #todoItems>
+    <li class="todo-item" *ngFor="let todo of todos$ | async; trackBy: trackByFn">
+        <app-todo-item 
+            [todo]="todo" 
+            (todoOnDelete)="deleteTodo($event)" 
+            (todoOnChange)="onEditItem($event)" 
+            [tooltip]="getTooltipTitle(todo.id)"
+            [routerLink]="[todo.id]"
+            routerLinkActive="item--active">
+            
+            <!-- (click)="onSelectItem(todo.id)"  -->
+            <!-- [class.item--active]="todo.id === selectedItemId || selectedItemId == undefined"> -->
+        </app-todo-item>
+
+    </li>
+</ng-template>
+
+<ng-template #todoLoading>
+    <app-loading-spinner></app-loading-spinner>
+</ng-template>
