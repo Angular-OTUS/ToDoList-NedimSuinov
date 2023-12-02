@@ -1,0 +1,12 @@
+
+<div class="status-title">
+    <h4>{{ title }}</h4>
+
+    <h4 style="margin-right: 10px;">{{ 1 }}</h4>
+</div>
+
+<hr>
+
+<div class="status-list">
+    <app-status-item *ngFor="let item of items; trackBy: trackByFn" [title]="item.title"></app-status-item>
+</div>

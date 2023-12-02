@@ -1,0 +1,13 @@
+<div class="sidebar-header">
+    <h2>TasksBoard</h2>
+</div>
+
+<ul class="sidebar-body">
+    <ng-container *ngFor="let item of items; trackBy: trackByFn; last as last">
+        <li class="sidebar-item" routerLinkActive="sidebar-item--active" >
+            <a [routerLink]="item.path">{{item.title}}</a>
+        </li>
+
+        <hr *ngIf="!last">
+    </ng-container>
+</ul>

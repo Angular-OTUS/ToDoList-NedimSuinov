@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 320px;
+    // background-color: #a5a5a5;
+
+    hr {
+        border-bottom: none; 
+        border-top: 1px dashed #a5a5a5;
+    }
+    
+    .status-title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .status-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}

@@ -7,9 +7,29 @@ import { canActivateDetailsRoute } from './guards/can-activate-details.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'todos',
+    redirectTo: 'board',
     pathMatch: 'full',
   },
+  {
+    path: 'backlog',
+    component: TodoListComponent,
+    data: { title: 'Backlog'}
+  },
+  {
+    path: 'board',
+    loadChildren: () => import('./board/board.module').then(m => m.BoardModule),
+    data: { title: 'Board'}
+  },
+
+
+
+
+
+
+
+
+
+  
   {
     path: 'todos',
     component: TodoListComponent,

@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: rgb(54, 35, 160);
+        right: 3px;
+        top: 3px;
+        width: 3px;
+        height: calc(100% - 6px);
+    }
+}
