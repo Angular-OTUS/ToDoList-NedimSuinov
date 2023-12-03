@@ -2,38 +2,38 @@
   "todos": [
     {
       "id": 0,
-      "text": "По клику на задачу тепе",
-      "description": "По клику на задачу теперь делать переход на путь /tasks/{id_задачи}. SelectedId нам больше не нужен. Если не очень понятно, то небольшое объяснение: У нас сохраняется тот же вывод",
+      "text": "Купить хлеб",
+      "description": "Сходить и купить хлеб",
       "status": 0
     },
     {
       "id": 1,
-      "text": "По клику на задачу тепе",
-      "description": "По клику на задачу тепе",
+      "text": "Купить книгу",
+      "description": "Сходить и купить книгу",
       "status": 1
     },
     {
       "id": 2,
-      "text": "По клику на задачу тепе",
-      "description": "По клику на задачу теперь делать переход на путь /tasks/{id_задачи}. SelectedId нам больше не нужен. Если не очень понятно, то небольшое объяснение: У нас сохраняется тот же вывод",
+      "text": "Учить Ангуляр",
+      "description": "Найти время и учить Ангуляр",
       "status": 0
     },
     {
       "id": 3,
-      "text": "По клику на задачу тепе",
-      "description": "По клику на задачу тепе",
+      "text": "Angular versioning and releases",
+      "description": "https://angular.io/guide/releases",
       "status": 2
     },
     {
       "id": 4,
       "text": "По клику на задачу тепе",
-      "description": "По клику на задачу теперь делать переход на путь /tasks/{id_задачи}. SelectedId нам больше не нужен. Если не очень понятно, то небольшое объяснение: У нас сохраняется тот же вывод",
+      "description": "По клику на задачу теперь делать переход на",
       "status": 3
     },
     {
       "id": 5,
-      "text": "По клику на задачу тепе",
-      "description": "По клику на задачу тепе",
+      "text": "This document contains the practices that",
+      "description": " Angular to know when and how new features are added",
       "status": 1
     }
   ]

@@ -25,7 +25,19 @@
     }
 
     .status-content {
+        font-size: .850rem;
         width: 100%;
-        height: 200px;
+    }
+
+    .status-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 95%;
+        white-space: nowrap;
+    }
+
+    hr {
+        border-bottom: none; 
+        border-top: 1px dashed #a5a5a5;
     }
 }

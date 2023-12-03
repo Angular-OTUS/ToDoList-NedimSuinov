@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
 import { ITodo } from 'src/app/interfaces/todo/todo-item.interface';
 import { INITIAL_TODO } from '../todo-list/todo.data';
 import { TodoStatusEnum } from 'src/app/enums/todo-status.enum';
@@ -10,7 +10,8 @@ const DEBOUNCE_TIME_DELAY: number = 500;
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.scss']
+  styleUrls: ['./todo-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoItemComponent implements OnInit, OnDestroy {
 
