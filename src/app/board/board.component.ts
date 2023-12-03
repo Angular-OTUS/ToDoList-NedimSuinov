@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TodoStatusEnum } from '../enums/todo-status.enum';
-import { IBoards } from './board.interface';
+import { IBoardDefault, IBoardHead, IBoards, IBoardsHead } from './board.interface';
 import { ITodos } from '../interfaces/todo/todo-item.interface';
 import { TodoService } from '../services/todo.service';
 import { Observable, combineLatest, from, map, mergeMap, of, scan } from 'rxjs';
@@ -18,39 +18,41 @@ import { Observable, combineLatest, from, map, mergeMap, of, scan } from 'rxjs';
 })
 export class BoardComponent implements OnInit {
 
-  boards: Array<keyof typeof TodoStatusEnum>;
+  boardsInitial: IBoardsHead<IBoardDefault>;
   todoList$: Observable<ITodos>;
-  boards$: Observable<any>;
+  boards$: Observable<IBoards<IBoardDefault>>;
 
   constructor(private todoService: TodoService) {
     this.todoList$ = this.todoService.selectTodos();
     
-    this.boards = Object.keys(TodoStatusEnum)
+    this.boardsInitial = Object.keys(TodoStatusEnum)
     .filter((key) => isNaN(Number(key)))
     .filter((key) => key != 'BackLog')
-    .map((name) => name as keyof typeof TodoStatusEnum)
+    .map((name) => {
+      return this.getBoardNameByStatus(name as IBoardDefault) || { code: 'Todo', name: 'Todo' }
+    })
 
-    this.boards$ = from(this.boards) 
+    this.boards$ = from(this.boardsInitial) 
     .pipe(
 
       // "1" --- "2" --- "3"
       mergeMap((board) => combineLatest(
         [of(board), 
-        this.selectTodoByStatus(board)]
+        this.selectTodoByStatus(board.code)]
       )), 
       
       // ["1", [...]] --- ["2", [...] --- ["3", [...]]
       map(([board, filtered]) => {
         return {
-          id: 1, 
-          title: board,
+          code: board.code,
+          title: board.name,
           tasks: filtered
         }
       }),  
       
       // {...} --- {...} --- {...} 
-      scan((acc: IBoards, curr) => {
-        const idx = acc.findIndex(i => i.title == curr.title);
+      scan((acc: IBoards<IBoardDefault>, curr) => {
+        const idx = acc.findIndex(i => i.code == curr.code);
         
         if(idx != -1) {
           acc[idx].tasks = curr.tasks;
@@ -64,12 +66,35 @@ export class BoardComponent implements OnInit {
     )
   }
 
-  selectTodoByStatus(status: keyof typeof TodoStatusEnum): Observable<ITodos> {
-    return this.todoList$.pipe(map((items => items.filter(item => item.status == TodoStatusEnum[status]))))
-  }
-
   ngOnInit(): void {
     this.todoService.loadTodos();
+  }
+
+  getBoardNameByStatus(status: IBoardDefault): IBoardHead<IBoardDefault> | undefined {
+    const boardNames: IBoardsHead<IBoardDefault> = [
+      {
+        code: 'BackLog',
+        name: 'BackLog'
+      },
+      {
+        code: 'Done',
+        name: 'Done'
+      },
+      {
+        code: 'InProgress',
+        name: 'In Progress'
+      },
+      {
+        code: 'Todo',
+        name: 'Todo'
+      }
+    ];
+
+    return boardNames.find(b => b.code === status);
+  }
+
+  selectTodoByStatus(status: keyof typeof TodoStatusEnum): Observable<ITodos> {
+    return this.todoList$.pipe(map((items => items.filter(item => item.status == TodoStatusEnum[status]))))
   }
 
   trackByFn = (item: any) => `${item.id}__${item.title}`;
