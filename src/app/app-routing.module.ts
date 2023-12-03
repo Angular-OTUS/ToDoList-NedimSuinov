@@ -12,24 +12,14 @@ const routes: Routes = [
   },
   {
     path: 'backlog',
-    component: TodoListComponent,
+    loadChildren: () => import('./backlog/backlog.module').then(m => m.BacklogModule),
     data: { title: 'Backlog'}
   },
   {
     path: 'board',
     loadChildren: () => import('./board/board.module').then(m => m.BoardModule),
     data: { title: 'Board'}
-  },
-
-
-
-
-
-
-
-
-
-  
+  },  
   {
     path: 'todos',
     component: TodoListComponent,

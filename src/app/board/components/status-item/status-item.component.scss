@@ -1,8 +1,13 @@
 :host {
     display: flex;
     flex-direction: column;
-    border: 1px solid gray;
+    padding: 10px;
+    background-color: #eaecef;
     position: relative;
+    
+    &:hover {
+        cursor: pointer;
+    }
 
     &::after {
         content: '';
@@ -12,5 +17,15 @@
         top: 3px;
         width: 3px;
         height: calc(100% - 6px);
+    }
+
+    .status-header {
+        display: flex;
+        width: 100%;
+    }
+
+    .status-content {
+        width: 100%;
+        height: 200px;
     }
 }

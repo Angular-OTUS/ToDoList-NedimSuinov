@@ -59,7 +59,7 @@ export class TodoItemComponent implements OnInit, OnDestroy {
 
   onTodoStatusChange(status: TodoStatusEnum): void {
     let changedTodo: ITodo = { ...this.todo } as ITodo;
-    changedTodo.status = status ? TodoStatusEnum.InProgress : TodoStatusEnum.Completed;
+    changedTodo.status = status ? TodoStatusEnum.InProgress : TodoStatusEnum.Done; /** Если что? то поправить на Complete, и не забыть поправить @see TodoStatusEnum */
     this.todoItemState$.next(changedTodo);
   }
 

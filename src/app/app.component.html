@@ -1,12 +1,13 @@
 <div class="container">
-    <aside tb-sidebar></aside>
+    <aside tb-sidebar [items]="sidebarItems">
+        <header class="sidebar-header">
+            <h2>TasksBoard</h2>
+        </header>
+    </aside>
 
     <main class="content">
-
         <header tb-header></header>
 
-        <div class="content-body">
-            <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
     </main>
 </div>

@@ -8,11 +8,16 @@ import { TooltipComponent } from './tooltip/container/tooltip.component';
 import { NotificationContainerComponent } from './notification/notification-container/notification-container.component';
 import { NotificationMessageComponent } from './notification/notification-message/notification-message.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     ButtonComponent,
     
+
+    SidebarComponent,
+
     TooltipDirective,
     TooltipComponent,
 
@@ -22,9 +27,11 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
   ],
   imports: [
     CommonModule,
+    RouterModule,
   ],
   exports: [
     ButtonComponent,
+    SidebarComponent,
     TooltipDirective,
     NotificationContainerComponent,
     LoadingSpinnerComponent,

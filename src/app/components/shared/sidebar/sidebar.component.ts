@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ISidebarItems } from './sidebar-item.interface';
 
 @Component({
   selector: 'aside[tb-sidebar]',
@@ -6,10 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  items = [
-    { id: 0, title: 'Backlog', path: 'backlog', idx: 0 },
-    { id: 1, title: 'Board', path: 'board', idx: 1 }
-  ]
+
+  @Input('items')
+  items: ISidebarItems = [];
 
   trackByFn = (item: any) => `${item.id}__${item.title}`
 }

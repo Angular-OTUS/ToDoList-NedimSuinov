@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-status-item',
@@ -7,6 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class StatusItemComponent {
 
+  showContent: boolean = false;
+
   @Input('title')
   title: string = '';
+
+  @HostListener('click', ['$event'])
+  onClick(event: MouseEvent) {
+    this.showContent = ! this.showContent;
+  }
 }
