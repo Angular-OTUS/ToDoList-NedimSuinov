@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 640px;
+    max-width: 992px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 12px 5px #dbdbdb;
+}
+
+.todo-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-no-items {
+    margin: auto;    
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+        position: relative;
+        list-style-type: none;
+    }
+}
+
+.input {
+    width: 100%;
+}
