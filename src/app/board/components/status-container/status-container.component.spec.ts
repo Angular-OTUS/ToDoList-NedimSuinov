@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { StatusContainerComponent } from './status-container.component';
+
+describe('StatusContainerComponent', () => {
+  let component: StatusContainerComponent;
+  let fixture: ComponentFixture<StatusContainerComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [StatusContainerComponent]
+    });
+    fixture = TestBed.createComponent(StatusContainerComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

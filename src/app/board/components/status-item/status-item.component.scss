@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #eaecef;
+    position: relative;
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: rgb(54, 35, 160);
+        right: 3px;
+        top: 3px;
+        width: 3px;
+        height: calc(100% - 6px);
+    }
+
+    .status-header {
+        display: flex;
+        width: 100%;
+    }
+
+    .status-content {
+        font-size: .850rem;
+        width: 100%;
+    }
+
+    .status-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 95%;
+        white-space: nowrap;
+    }
+
+    hr {
+        border-bottom: none; 
+        border-top: 1px dashed #a5a5a5;
+    }
+}

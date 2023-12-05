@@ -1,0 +1,9 @@
+<div class="status-header">
+    <span class="status-title">{{ task.text }}</span>
+</div>
+
+<div *ngIf="showContent" class="status-content">
+    <hr>
+
+    <span>{{ task.description }}</span>
+</div>

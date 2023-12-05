@@ -16,6 +16,7 @@ import { TodoCreateComponent } from './components/todo-create/todo-create.compon
 import { TodoFilterComponent } from './components/todo-filter/todo-filter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TodoViewComponent } from './components/todo-view/todo-view.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TodoViewComponent } from './components/todo-view/todo-view.component';
     TodoCreateComponent,
     TodoFilterComponent,
     TodoViewComponent,
+    HeaderComponent,
   ],
   imports: [
     // Angular

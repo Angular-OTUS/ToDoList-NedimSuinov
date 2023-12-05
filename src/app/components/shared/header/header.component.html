@@ -1,0 +1,9 @@
+<h3>{{ title$ | async }}</h3>
+
+<div style="min-width: 80px;" (mouseenter)="selectMouseEnter($event)" (mouseleave)="selectMouseLeave($event)">
+    <span class="lang-select">{{ selectedLanguage.name }}</span>
+
+    <ul class="lang-list" *ngIf="showLanguageList">
+        <li class="select-lang" (click)="onSelectLanguage(item)" *ngFor="let item of languageList; trackBy: trackByFn">{{ item.name }}</li>
+    </ul>
+</div>

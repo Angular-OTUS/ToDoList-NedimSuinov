@@ -1,0 +1,11 @@
+<div class="status-title">
+    <h4>{{ title | uppercase }}</h4>
+
+    <h4 class="status-length">{{ items.length }}</h4>
+</div>
+
+<hr>
+
+<div class="status-list">
+    <app-status-item *ngFor="let item of items; trackBy: trackByFn" [task]="item"></app-status-item>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { NotificationService } from '../notification-message.service';
 import { Subject, takeUntil } from 'rxjs';
 import { Notification, NotificationType } from './../notification';
@@ -8,6 +8,7 @@ import { notificationAnimation } from '../notification.animation';
   selector: 'notification-message',
   templateUrl: './notification-message.component.html',
   styleUrls: ['./notification-message.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [notificationAnimation]
 })
 export class NotificationMessageComponent implements OnInit, OnDestroy {

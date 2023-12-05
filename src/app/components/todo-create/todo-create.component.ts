@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TODO_STATUS_NAMES } from 'src/app/helpers/guides';
 import { IGuideSimple, IGuidesSimple } from 'src/app/interfaces/guide.interface';
@@ -7,7 +7,8 @@ import { ITodo } from 'src/app/interfaces/todo/todo-item.interface';
 @Component({
   selector: 'app-todo-create',
   templateUrl: './todo-create.component.html',
-  styleUrls: ['./todo-create.component.scss']
+  styleUrls: ['./todo-create.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoCreateComponent {
 
