@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3153914535912068176" datatype="html">
+        <source>Backlog</source>
+        <target>Задачи в ожидании</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app-routing.module.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">The header</note>
+        <note priority="1" from="meaning">nav header</note>
+      </trans-unit>
+      <trans-unit id="2922493645044491578" datatype="html">
+        <source>Board</source>
+        <target>Доска</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app-routing.module.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">The header</note>
+        <note priority="1" from="meaning">nav header</note>
+      </trans-unit>
+      <trans-unit id="1398296832117533804" datatype="html">
+        <source>TasksBoard</source>
+        <target>Доска задач</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5337633564695054692" datatype="html">
+        <source>Backlog</source>
+        <target>Ожидание</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">The text link to backlog page in the left sidebar</note>
+        <note priority="1" from="meaning">left sidebar nav item</note>
+      </trans-unit>
+      <trans-unit id="5106212673827478094" datatype="html">
+        <source>Board</source>
+        <target>Доска</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">The text link to board page in the left sidebar</note>
+        <note priority="1" from="meaning">left sidebar nav item</note>
+      </trans-unit>
+      <trans-unit id="6110435268789378137" datatype="html">
+        <source>BackLog</source>
+        <target>Ожидает</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/board/board.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <note priority="1" from="description">In the page board. Name column</note>
+        <note priority="1" from="meaning">board</note>
+      </trans-unit>
+      <trans-unit id="6314325382374231231" datatype="html">
+        <source>Done</source>
+        <target>Завершена</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/board/board.component.ts</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <note priority="1" from="description">In the page board. Name column</note>
+        <note priority="1" from="meaning">board</note>
+      </trans-unit>
+      <trans-unit id="9082028906548264048" datatype="html">
+        <source>In Progress</source>
+        <target>В работе</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/board/board.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+        <note priority="1" from="description">In the page board. Name column</note>
+        <note priority="1" from="meaning">board</note>
+      </trans-unit>
+      <trans-unit id="5168469018224088103" datatype="html">
+        <source>Todo</source>
+        <target>Сделать</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/board/board.component.ts</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <note priority="1" from="description">In the page board. Name column</note>
+        <note priority="1" from="meaning">board</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

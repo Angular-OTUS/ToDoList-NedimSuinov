@@ -35,6 +35,18 @@
       "text": "This document contains the practices that",
       "description": " Angular to know when and how new features are added",
       "status": 1
+    },
+    {
+      "id": 6,
+      "text": "По клику на задачу тепе",
+      "description": "По клику на задачу теперь делать переход на",
+      "status": 0
+    },
+    {
+      "id": 7,
+      "text": "This document contains",
+      "description": " Angular to know when and how new features are added",
+      "status": 0
     }
   ]
 }

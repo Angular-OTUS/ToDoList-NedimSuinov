@@ -74,19 +74,19 @@ export class BoardComponent implements OnInit {
     const boardNames: IBoardsHead<IBoardDefault> = [
       {
         code: 'BackLog',
-        name: 'BackLog'
+        name: $localize`:board|In the page board. Name column:BackLog`
       },
       {
         code: 'Done',
-        name: 'Done'
+        name: $localize`:board|In the page board. Name column:Done`
       },
       {
         code: 'InProgress',
-        name: 'In Progress'
+        name: $localize`:board|In the page board. Name column:In Progress`
       },
       {
         code: 'Todo',
-        name: 'Todo'
+        name: $localize`:board|In the page board. Name column:Todo`
       }
     ];
 

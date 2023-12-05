@@ -13,12 +13,12 @@ const routes: Routes = [
   {
     path: 'backlog',
     loadChildren: () => import('./backlog/backlog.module').then(m => m.BacklogModule),
-    data: { title: 'Backlog'}
+    data: { title: $localize`:nav header|The header:Backlog`}
   },
   {
     path: 'board',
     loadChildren: () => import('./board/board.module').then(m => m.BoardModule),
-    data: { title: 'Board'}
+    data: { title: $localize`:nav header|The header:Board`}
   },  
   {
     path: 'todos',

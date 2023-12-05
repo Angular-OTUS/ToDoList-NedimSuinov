@@ -3,7 +3,46 @@
     flex-direction: row;
     align-items: center;
     padding-left: 15px;
+    padding-right: 15px;
+    justify-content: space-between;
     min-height: 91px;
     background-color: #FFF;
     border-bottom: 1px solid #eaecef;
+
+    .lang-select {
+        min-width: 80px;
+        padding: 3px 6px;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .lang-list {
+        min-width: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: fixed;
+        right: 15px;
+        top: 17px;
+        list-style-type: none;
+        background-color: #FFF;
+        
+        :first-child {
+            list-style-type: disc;
+        }
+
+        & > li {
+            transition: all .5s;
+            padding: 3px 6px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #eaecef;
+            }
+        }
+    }
+        
 }

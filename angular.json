@@ -13,10 +13,22 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale":"en-US",
+        "locales": {
+          "ru-RU": {
+            "translation": "src/locale/messages.ru.xlf"
+          },
+          "fr-FR": {
+            "translation": "src/locale/messages.fr.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["ru-RU", "en-US"],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/assets/styles"
@@ -56,6 +68,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "localize": false,
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -68,6 +81,9 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "ru": {
+              "localize": ["ru-RU"]
             }
           },
           "defaultConfiguration": "production"
@@ -80,6 +96,9 @@
             },
             "development": {
               "browserTarget": "todo:build:development"
+            },
+            "development-ru": {
+              "browserTarget": "todo:build:development,ru"
             }
           },
           "defaultConfiguration": "development"
