@@ -3,6 +3,12 @@
     flex-direction: column;
     padding: 15px;
     width: 320px;
+    height: 100%;
+    transition: background-color .5s;
+    
+    &.drag-here {
+        background-color: rgb(238 239 238);;
+    }
 
     h4 {
         margin-top: 15px;

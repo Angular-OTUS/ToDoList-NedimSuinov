@@ -17,3 +17,8 @@ export interface IBoardHead<T> {
 };
 
 export type IBoardsHead<T> = Array<IBoardHead<T>>;
+
+export const INITIAL_BOARD: IBoardHead<IBoardDefault> = {
+    code: 'BackLog',
+    name: 'BackLog'
+}
