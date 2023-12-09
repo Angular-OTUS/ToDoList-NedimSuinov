@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { NotificationService } from '../notification-message.service';
-import { Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import { Notification, NotificationType } from './../notification';
 import { notificationAnimation } from '../notification.animation';
 
@@ -14,11 +14,11 @@ import { notificationAnimation } from '../notification.animation';
 export class NotificationMessageComponent implements OnInit, OnDestroy {
 
   unsubscribe$: Subject<boolean> = new Subject<boolean>()
-  notifications: Notification[] = [];
+  notifications$: BehaviorSubject<Notification[]> = new BehaviorSubject<Notification[]>([]);
   
   private addNotification(notification: Notification) {
     
-    this.notifications.push(notification);
+    this.notifications$.next([...this.notifications$.getValue(), notification]);
 
     if (notification.timeout !== 0) {
       setTimeout(() => this.close(notification), notification.timeout);
@@ -34,7 +34,7 @@ export class NotificationMessageComponent implements OnInit, OnDestroy {
   }
 
   close(notification: Notification) {
-    this.notifications = this.notifications.filter(item => item.id != notification.id);
+    this.notifications$.next(this.notifications$.getValue().filter(item => item.id != notification.id));
   }
 
   className(notification: Notification): string {

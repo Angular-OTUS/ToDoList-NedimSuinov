@@ -1,4 +1,4 @@
-<div *ngFor="let notification of notifications; trackBy: trackByFn" class="notification" @notificationAnimation>
+<div *ngFor="let notification of notifications$ | async; trackBy: trackByFn" class="notification" @notificationAnimation>
     <ng-container *ngTemplateOutlet="notificationTemplate; context:{ notification: notification }"></ng-container>
 </div>
 
