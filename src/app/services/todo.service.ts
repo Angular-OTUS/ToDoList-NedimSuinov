@@ -99,6 +99,21 @@ export class TodoService extends BehaviorSubject<ITodos> implements OnDestroy {
     }
   }
 
+  // Drag and Drop
+
+  dragElement: ITodo | undefined = undefined;
+
+  public dragStart(item: ITodo): void {
+    this.dragElement = item;
+  }
+
+  public dragEnd(value: TodoStatusEnum): void {
+    if(this.dragElement && this.dragElement.status != value) {
+      const updateTodo = { ...this.dragElement, status: value}
+      this.updateTodoDB(updateTodo);
+    }
+  }
+
   // Обновить запись в БД
   public updateTodoDB(todo: ITodo): void {
     const update$ = this.todoApi.updateTodo(todo.id, todo);

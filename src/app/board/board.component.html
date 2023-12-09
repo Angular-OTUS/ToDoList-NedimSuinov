@@ -1,0 +1,3 @@
+<div [class.v-spacer]="!last" *ngFor="let item of boards$ | async; trackBy: trackByFn; last as last">
+    <app-status-container [board]="{ code: item.code, name: item.title }" [items]="item.tasks" dropzone="true"></app-status-container>
+</div> 

@@ -1,4 +1,6 @@
 export enum TodoStatusEnum { 
+    'BackLog', // Добавил в связи с выполнением дз-8
+    'Todo', // Добавил в связи с выполнением дз-8
     'InProgress', 
-    'Completed'
+    'Done' // Изменил (Completed) в связи с выполнением дз-8
 };

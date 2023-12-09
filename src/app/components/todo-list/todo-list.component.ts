@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ITodo, ITodos } from '../../interfaces/todo/todo-item.interface';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { TodoService } from 'src/app/services/todo.service';
 import { Observable, map } from 'rxjs';
-import { ActivatedRoute, PRIMARY_OUTLET, Router, RunGuardsAndResolvers } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,

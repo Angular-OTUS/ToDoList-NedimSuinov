@@ -1,10 +1,11 @@
-import { Component, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { ITooltip } from './tooltip.interface';
 
 @Component({
   selector: 'app-tooltip',
   templateUrl: './tooltip.component.html',
-  styleUrls: ['./tooltip.component.scss']
+  styleUrls: ['./tooltip.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TooltipComponent {
 
